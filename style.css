@@ -1,0 +1,377 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9fbfd;
+  color: #2d3748;
+  line-height: 1.6;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 16px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.logo i {
+  color: #ffcc00;
+  font-size: 1.4rem;
+}
+
+.logo h1 {
+  color: white;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 1rem;
+}
+
+.nav-link.active {
+  color: #ffcc00;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #fbbf24;
+}
+
+.dark-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(10px);
+  transition: background 0.3s;
+}
+
+.dark-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Search */
+.search-section {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-box i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  font-size: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  outline: none;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+#searchInput:focus {
+  border-color: #6b46c1;
+  box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.2);
+}
+
+/* Secciones */
+section[id] {
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: none;
+}
+
+section[id].active-section {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+/* Crypto List */
+.crypto-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.crypto-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.crypto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border-color: #6b46c1;
+}
+
+.crypto-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.crypto-card h3 img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.crypto-card .price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.crypto-card .change {
+  font-size: 0.95rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.crypto-card .change.positive {
+  background: #f0fdf4;
+  color: #22c55e;
+}
+
+.crypto-card .change.negative {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+/* Calculadora */
+.calc-form {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.form-group select,
+.form-group input {
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f8fafc;
+  transition: border 0.3s;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  border-color: #6b46c1;
+  outline: none;
+}
+
+.btn-calculate {
+  background: #7c3aed;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+  font-size: 1rem;
+}
+
+.btn-calculate:hover {
+  background: #6b30d1;
+}
+
+.profit-result {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e0;
+  font-weight: 500;
+}
+
+/* Gráfico */
+#priceChart {
+  max-height: 400px;
+  margin-top: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #1a202c;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+/* Modo Oscuro */
+body.dark-mode {
+  background: #111827;
+  color: #e2e8f0;
+}
+
+body.dark-mode .header {
+  background: #1e293b;
+}
+
+body.dark-mode .logo h1,
+body.dark-mode .nav-link {
+  color: #f7fafc;
+}
+
+body.dark-mode .nav-link.active {
+  color: #fbbf24;
+}
+
+body.dark-mode .search-box input {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f7fafc;
+}
+
+body.dark-mode .crypto-card {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f7fafc;
+}
+
+body.dark-mode .crypto-card .price {
+  color: #fbbf24;
+}
+
+body.dark-mode .calc-form .form-group select,
+body.dark-mode .calc-form .form-group input {
+  background: #2d3748;
+  border-color: #475569;
+  color: #f7fafc;
+}
+
+body.dark-mode .btn-calculate {
+  background: #8b5cf6;
+}
+
+body.dark-mode .profit-result {
+  background: #2d3748;
+  border-color: #475569;
+}
+
+body.dark-mode footer {
+  background: #111827;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .nav {
+    margin: 10px 0;
+    justify-content: center;
+  }
+
+  .calc-form {
+    flex-direction: column;
+  }
+}
