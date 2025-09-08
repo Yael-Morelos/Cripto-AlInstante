@@ -36,6 +36,7 @@ body {
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
+  padding: 0 10px;
 }
 
 .logo {
@@ -44,6 +45,7 @@ body {
   gap: 10px;
   font-size: 1.8rem;
   font-weight: 700;
+  overflow: hidden;
 }
 
 .logo i {
@@ -53,11 +55,17 @@ body {
 
 .logo h1 {
   color: white;
+  font-size: 1.8rem;
+  margin: 0;
+  text-align: left;
+  white-space: nowrap;
 }
 
 .nav {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
+  margin: 0;
 }
 
 .nav-link {
@@ -66,6 +74,9 @@ body {
   font-weight: 500;
   transition: color 0.3s;
   font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 0;
 }
 
 .nav-link.active {
@@ -226,17 +237,17 @@ h2 {
 /* Calculadora */
 .calc-form {
   display: flex;
+  flex-direction: column;
   gap: 16px;
-  flex-wrap: wrap;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .form-group {
-  flex: 1;
-  min-width: 200px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
 }
 
 .form-group label {
@@ -253,6 +264,7 @@ h2 {
   font-size: 1rem;
   background: #f8fafc;
   transition: border 0.3s;
+  width: 100%;
 }
 
 .form-group select:focus,
@@ -271,6 +283,8 @@ h2 {
   font-weight: 500;
   transition: background 0.3s;
   font-size: 1rem;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .btn-calculate:hover {
@@ -338,6 +352,16 @@ body.dark-mode .crypto-card .price {
   color: #fbbf24;
 }
 
+body.dark-mode .crypto-card .change.positive {
+  background: #10b981;
+  color: white;
+}
+
+body.dark-mode .crypto-card .change.negative {
+  background: #ef4444;
+  color: white;
+}
+
 body.dark-mode .calc-form .form-group select,
 body.dark-mode .calc-form .form-group input {
   background: #2d3748;
@@ -364,14 +388,37 @@ body.dark-mode footer {
     flex-direction: column;
     text-align: center;
     gap: 10px;
+    padding: 0 10px;
+  }
+
+  .logo h1 {
+    font-size: 1.6rem;
+    margin-top: 5px;
   }
 
   .nav {
     margin: 10px 0;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: 300px;
   }
 
   .calc-form {
-    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-calculate {
+    padding: 10px 16px;
+    font-size: 0.9rem;
   }
 }
